@@ -76,6 +76,11 @@ The frontend will start on http://localhost:3000
    - Enter username and password
    - Shows alert on invalid credentials
 
+
+## Demo
+
+https://drive.google.com/file/d/1va_XY3xdq1PARRdsZNvghwwxdIAot0F9/view?usp=sharing
+
 2. Items List Screen
    - Displays all available items
    - Click on an item to add it to cart
