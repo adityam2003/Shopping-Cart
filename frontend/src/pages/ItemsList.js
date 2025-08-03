@@ -50,38 +50,19 @@ function ItemsList() {
       </div>
 
       <div className="products-grid">
-        <div 
-          className="product-card featured"
-          onClick={() => handleProductClick(1)}
-        >
-          <h3>New Gen</h3>
-          <h2>X-Bud</h2>
-          <p>Premium Wireless Earbuds</p>
-          <img src="/images/earphonewired.png" alt="X-Bud" />
-          <button className="view-more">→</button>
-        </div>
-
-        <div 
-          className="product-card"
-          onClick={() => handleProductClick(2)}
-        >
-          <h3>Pro Series</h3>
-          <h2>Studio Max</h2>
-          <p>Professional Studio Headphones</p>
-          <img src="" alt="Studio Max Headphones" />
-          <button className="view-more">→</button>
-        </div>
-
-        <div 
-          className="product-card"
-          onClick={() => handleProductClick(3)}
-        >
-          <h3>Light Grey Surface</h3>
-          <h2>Headphone</h2>
-          <p>Boosted with bass</p>
-          <img src="/images/ear1.png" alt="Grey Headphone" />
-          <button className="view-more">→</button>
-        </div>
+        {items.slice(0, 3).map((item, index) => (
+          <div 
+            key={item.id}
+            className="product-card"
+            onClick={() => handleProductClick(item.id)}
+          >
+            <h3>{item.category}</h3>
+            <h2>{item.name}</h2>
+            <p>{item.description}</p>
+            <img src={item.image_urls || '/images/placeholder.svg'} alt={item.name} />
+            <button className="view-more">→</button>
+          </div>
+        ))}
       </div>
 
       <div className="social-links">
