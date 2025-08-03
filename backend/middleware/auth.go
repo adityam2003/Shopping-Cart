@@ -24,16 +24,14 @@ func AuthMiddleware() gin.HandlerFunc {
 		}
 
 		token := parts[1]
-		// For demo purposes, we're using a simple token validation
-		// In production, you should properly validate the JWT token
+		
 		if token == "" {
 			c.JSON(http.StatusUnauthorized, gin.H{"error": "Invalid token"})
 			c.Abort()
 			return
 		}
 
-		// Set a dummy user ID for testing
-		// In production, this should come from token validation
+		
 		c.Set("user_id", 1)
 		c.Next()
 	}

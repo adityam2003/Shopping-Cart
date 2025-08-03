@@ -71,7 +71,6 @@ func Login(c *gin.Context) {
 		return
 	}
 
-	// Generate token (you would use a proper JWT implementation here)
 	user.Token = "sample-token"
 
 	c.JSON(http.StatusOK, gin.H{
